@@ -7,7 +7,14 @@ with open('reviews.txt', 'r') as f:
 		if count % 1000 == 0:  # % 求餘數
 			print(len(data))  #每讀1000筆印一次
 
-print(len(data))
-print(data[0]) #印出list的第一筆
-print('---------------------')
-print(data[1]) #印出list的第二筆
+print('檔案讀取完了，總共有', len(data),'筆資料')
+
+#要怎麼算這100萬筆資料的平均長度
+
+sum_len = 0
+for d in data:  #每一筆資料叫d
+	#print(len(d))
+	#len(d)
+	sum_len = sum_len + len(d)
+	#print(sum_len)
+print('平均是',sum_len/len(data))
